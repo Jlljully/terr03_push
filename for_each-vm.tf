@@ -32,4 +32,5 @@ resource "yandex_compute_instance" "bubuntu" {
     serial-port-enable = 1
     ssh-keys           = "${"ubuntu"}:${file("/root/.ssh/id_ed25519.pub")}"
   }
+
 }

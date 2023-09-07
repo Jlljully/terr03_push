@@ -1,16 +1,16 @@
----
+[webservers]
 
-- name: test
-  gather_facts: false
-  hosts: all
-  vars:
-    ansible_user: ubuntu
-  become: yes
-  tasks:
-  
-  - name: Install Nginx Web Server on Debian Family
-    apt:
-      name: nginx
-      state: latest   
-      update_cache: yes 
-    
+jll-web-1   ansible_host=158.160.120.154 
+
+jll-web-2   ansible_host=158.160.110.117 
+
+[databases]
+
+main   ansible_host=158.160.96.250 
+
+replica   ansible_host=158.160.121.8 
+
+[storage]
+
+storage   ansible_host=51.250.65.59 
+

@@ -34,4 +34,9 @@ resource "yandex_compute_instance" "ubuntu" {
     serial-port-enable = var.metadata.serial-port-enable
     ssh-keys           = var.metadata.ssh-keys
   }
+  provisioner "local-exec" {
+    command  = "export ANSIBLE_HOST_KEY_CHECKING=False; ansible-playbook -i /home/jlljully/hwterr/ter-homeworks/03/src/test.yml"
+    on_failure = continue
+ }
+
 }

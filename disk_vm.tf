@@ -1,5 +1,6 @@
 
 resource "yandex_compute_instance" "storage" {
+  count = 1
   name     = "storage"
   resources {
     cores  = 2
